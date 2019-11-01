@@ -305,6 +305,22 @@ function focusDisp(n) {
     })
 }
 
+function adjustMargin(n) {
+    return new Promise(resolve => {
+        if (n) {
+            chrome.storage.local.get({"margin": 10}, settings => {
+		var newMargin = (1 * settings.margin) + n
+		if (newMargin >= 0) {
+                    chrome.storage.local.set({"margin": newMargin})
+                    tileWindows()
+		}
+            })
+        } else {
+            resolve();
+        }
+    })
+}
+
 function moveDisp(n) {
     return new Promise(resolve => {
         if (n < allDisplays.length) {
@@ -345,6 +361,8 @@ getSettings({"enabled": isChromeBook()}).then(settings => {
                 ['020-focus-dsp-1',                 ()=> focusDisp(0)  ],
                 ['021-focus-dsp-2',                 ()=> focusDisp(1)  ],
                 ['022-focus-dsp-3',                 ()=> focusDisp(2)  ],
+                ['030-shrink-margin',               ()=> adjustMargin(-10)  ],
+                ['031-expand-margin',               ()=> adjustMargin(10)  ],
                 ['100-move-focused-win-1-win-ccw',  ()=> winRotate(-1) ],
                 ['101-move-focused-win-1-win-cw',   ()=> winRotate(1) ],
                 ['110-move-focused-win-1-dsp-1',    ()=> moveDisp(0) ],

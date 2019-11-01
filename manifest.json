@@ -35,6 +35,8 @@
     "020-focus-dsp-1":                { "description": "focus display 1 (Suggest Alt+Shift+W)" },
     "021-focus-dsp-2":                { "description": "focus display 2 (Suggest Alt+Shift+E)" },
     "022-focus-dsp-3":                { "description": "focus display 3 (Suggest Alt+Shift+R)" },
+    "030-shrink-margin":              { "description": "shrink margin (Suggest Ctrl+Shift+," },
+    "031-expand-margin":              { "description": "expand margin (Suggest Ctrl+Shift+." },
     "100-move-focused-win-1-win-ccw": { "description": "move the focused window one window counterclockwise (Suggest Ctrl+Shift+H)" },
     "101-move-focused-win-1-win-cw":  { "description": "move the focused window one window clockwise (Suggest Ctrl+Shift+L)" },
     "110-move-focused-win-1-dsp-1":   { "description": "move the focused window to display 1 (Suggest Ctrl+Shift+W)" },
